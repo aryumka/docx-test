@@ -25,7 +25,7 @@ public class WordReplacer {
     return docx;
   }
 
-  private XWPFDocument replaceText(XWPFDocument doc, String originalText, String updatedText) {
+  public XWPFDocument replaceText(XWPFDocument doc, String originalText, String updatedText) {
     replaceTextInParagraphs(doc.getParagraphs(), originalText, updatedText);
     for (XWPFTable tbl : doc.getTables()) {
       for (XWPFTableRow row : tbl.getRows()) {
@@ -34,6 +34,7 @@ public class WordReplacer {
         }
       }
     }
+
     return doc;
   }
 
@@ -45,6 +46,7 @@ public class WordReplacer {
     List<XWPFRun> runs = paragraph.getRuns();
     for (XWPFRun run : runs) {
       String text = run.getText(0);
+
       if (text != null && text.contains(originalText)) {
         String updatedRunText = text.replace(originalText, updatedText);
         run.setText(updatedRunText, 0);

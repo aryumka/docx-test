@@ -21,6 +21,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.apache.poi:poi-ooxml:5.3.0")
     implementation("org.docx4j:docx4j-JAXB-ReferenceImpl:11.5.0")
+    implementation("org.docx4j:docx4j-export-fo:11.5.0")
+    implementation("fr.opensagres.xdocreport:fr.opensagres.poi.xwpf.converter.pdf:2.1.0")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
